@@ -57,7 +57,7 @@ where
 }
 
 /// Request ID extractor
-#[derive(Clone, Debug)]
+#[derive(Clone)]
 pub struct RequestID(pub Uuid);
 
 impl FromRequest for RequestID {
@@ -74,6 +74,12 @@ impl FromRequest for RequestID {
 }
 
 impl std::fmt::Display for RequestID {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.0.to_string())
+    }
+}
+
+impl std::fmt::Debug for RequestID {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}", self.0.to_string())
     }
