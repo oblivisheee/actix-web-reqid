@@ -2,6 +2,8 @@
 name = "actix-web-reqid"
 version = "0.1.0"
 edition = "2024"
+description = "Middleware for Actix Web to generate and extract UUID request IDs."
+license = "MIT"
 
 [dependencies]
 actix-web = "4.11.0"
